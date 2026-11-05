@@ -9,7 +9,7 @@ const SITE = {
   companyName: "삼일정밀",
   companyNameEn: "SAMIL PRECISION",
   slogan: "세 번의 정밀함, 한 번의 단순함",
-  tagline: "CNC 밀링·선반으로 샤프트·축류부터 의료기기·장비 부품, 시제품까지 정밀 부품을 외주가공합니다.",
+  tagline: "약속한 날, 도면대로, 합리적인 값에 깎습니다.",
 
   ceo: "[대표자명 입력]",
   founded: "[설립 연도 입력]",
@@ -26,6 +26,34 @@ const SITE = {
   // Formspree 등 폼 서비스 주소. 비워 두면 메일 앱(mailto) 방식.
   // 예: "https://formspree.io/f/xxxxabcd"
   formEndpoint: "",
+
+  /* -------------------------------------------------------------------
+   * 사이트에 보이는 수치는 전부 여기 한 곳에서 바꿉니다.
+   * ※ 2026-11-05 LLM 추정 — 실제 값 확인 필요 (aiTime 만 예외: 시험 부품 시뮬레이션 실측).
+   *   소규모 CNC 외주가공 업체에 현실적인 능력·약속 수준으로 넣어 둔 값입니다.
+   *   실적 통계(고객 수·준수율 등)는 일부러 넣지 않았습니다.
+   *   value = 큰 숫자, unit = 단위, label = 설명 한 줄, inline = 문장 속에 쓸 때 모양(선택)
+   *   값을 바꾸면 첫 화면·세 기둥·설비·견적 문의에 모두 반영됩니다. 항목을 빼려면 index.html 의 data-nums 에서도 지우세요.
+   * ------------------------------------------------------------------- */
+  numbers: {
+    // 납기
+    quoteReply:  { value: "1",      unit: "영업일 안", label: "견적·납기 회신", inline: "1영업일 안" },   // LLM 추정 — 실제 값 확인 필요
+    standardLead:{ value: "7",      unit: "영업일",   label: "표준 납기 (단순 부품·소량 기준)" },        // LLM 추정 — 실제 값 확인 필요
+    rushLead:    { value: "2",      unit: "영업일부터", label: "급행 납기 (협의)" },                    // LLM 추정 — 실제 값 확인 필요
+    delayNotice: { value: "2",      unit: "일 전",    label: "늦어질 일이 생기면 미리 연락" },          // LLM 추정(약속) — 실제 값 확인 필요
+    // 정밀도
+    tolerance:   { value: "±0.01",  unit: "mm",      label: "가공 공차 (더 엄격한 공차는 협의)" },     // LLM 추정 — 실제 값 확인 필요
+    roughness:   { value: "Ra 0.8", unit: "μm",      label: "표면 거칠기 (정삭 기준)" },              // LLM 추정 — 실제 값 확인 필요
+    checks:      { value: "3",      unit: "번 확인",  label: "도면 검토·가상 가공·출하 측정" },        // 슬로건 '세 번의 정밀함' 과 같은 뜻
+    // 가격
+    minOrder:    { value: "1",      unit: "개부터",   label: "최소 주문 수량" },                       // LLM 추정 — 실제 값 확인 필요
+    quoteFee:    { value: "0",      unit: "원",      label: "견적·도면 검토 비용" },                   // LLM 추정 — 실제 값 확인 필요
+    aiTime:      { value: "−30.9",  unit: "%",       label: "자동 공정 다듬기 후 가공 시간 (시험 부품 10종)" }, // 시험 부품 시뮬레이션 실측 (18,790초 → 12,992초)
+    // 설비
+    millRange:   { value: "800×500", unit: "mm",     label: "밀링 가공 범위 (가로×세로)" },            // LLM 추정 — 실제 설비 사양으로 바꿔 주세요
+    latheDia:    { value: "Ø250",   unit: "mm",      label: "선반 최대 가공 지름" },                   // LLM 추정 — 실제 설비 사양으로 바꿔 주세요
+    materials:   { value: "5",      unit: "종 이상",  label: "탄소강·스테인리스·알루미늄·황동·플라스틱" }, // LLM 추정 — 실제 값 확인 필요
+  },
 
   // 설비 현황 표. 대수·사양은 실제 보유 현황으로 바꿔 주세요. 줄을 더하거나 빼도 됩니다.
   equipment: [
@@ -93,6 +121,32 @@ function applySite() {
     });
   }
 
+  // 수치 묶음 (SITE.numbers) — <dl data-nums="키,키"> 와 <b data-num-inline="키">
+  document.querySelectorAll("[data-nums]").forEach((dl) => {
+    dl.innerHTML = "";
+    dl.dataset.nums.split(",").map((k) => k.trim()).forEach((k) => {
+      const n = SITE.numbers[k];
+      if (!n) return;
+      const item = document.createElement("div");
+      item.className = "num";
+      const dd = document.createElement("dd");
+      dd.textContent = n.value;
+      if (n.unit) {
+        const small = document.createElement("small");
+        small.textContent = n.unit;
+        dd.appendChild(small);
+      }
+      const dt = document.createElement("dt");
+      dt.textContent = n.label;
+      item.append(dd, dt);
+      dl.appendChild(item);
+    });
+  });
+  document.querySelectorAll("[data-num-inline]").forEach((el) => {
+    const n = SITE.numbers[el.dataset.numInline];
+    if (n) el.textContent = n.inline || (n.value + n.unit);
+  });
+
   // 지도 링크
   const q = encodeURIComponent(isPlaceholder(SITE.address) ? SITE.companyName : SITE.address);
   const naver = document.getElementById("naverMap");
@@ -150,7 +204,7 @@ function setupScroll() {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  const targets = document.querySelectorAll(".card, .case, .q-item, .flow li, .fact-list, .table-wrap, .quote-form");
+  const targets = document.querySelectorAll(".pillar-img, .pillar-copy, .sim, .equip-grid, .quote-form");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {

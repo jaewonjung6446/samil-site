@@ -4,26 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>삼일정밀 | CNC 밀링·선반 정밀 부품 외주가공</title>
-  <meta name="description" content="삼일정밀은 CNC 밀링·선반으로 샤프트·축류, 의료기기·장비 부품, 시제품과 소량 다품종 정밀 부품을 도면대로 가공합니다. 도면만 보내 주시면 검토 후 견적을 드립니다.">
-  <meta name="keywords" content="삼일정밀, SAMIL PRECISION, CNC 가공, 정밀가공, 외주가공, CNC 밀링, CNC 선반, 샤프트 가공, 의료기기 부품, 시제품 가공">
+  <meta name="description" content="삼일정밀은 CNC 밀링·선반 정밀 부품을 약속한 날, 도면대로, 합리적인 값에 가공합니다. 시제품 1개부터 도면만 보내 주세요.">
+  <meta name="keywords" content="삼일정밀, CNC 가공, 정밀가공, 외주가공, CNC 밀링, CNC 선반, 샤프트 가공, 시제품 가공, 소량 가공">
   <meta name="theme-color" content="#1E2023">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="삼일정밀">
   <meta property="og:title" content="삼일정밀 | CNC 밀링·선반 정밀 부품 외주가공">
-  <meta property="og:description" content="샤프트·축류, 의료기기·장비 부품, 시제품·소량 다품종. 도면만 보내 주시면 검토 후 견적을 드립니다.">
+  <meta property="og:description" content="약속한 날, 도면대로, 합리적인 값에. 시제품 1개부터 도면만 보내 주세요.">
   <meta property="og:image" content="assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="삼일정밀 로고 — 세 번의 정밀함, 한 번의 단순함">
-  <meta name="application-name" content="삼일정밀 (SAMIL PRECISION)">
-  <!-- 실제 배포 후엔 og:url / og:image 를 전체 주소(https://...)로 바꿔 주세요. 영문 이름(SAMIL PRECISION)은 메타 정보에만 둠 -->
+  <meta name="application-name" content="삼일정밀">
+  <!-- 실제 배포 후엔 og:url / og:image 를 전체 주소(https://...)로 바꿔 주세요. -->
+  <!-- 2026-11-05 간결판: 회사 소개·가공 분야·품질·가공 사례·AI 공정 상세·작업 흐름·오시는 길 섹션을 걷어 냄. 예전 전체판은 _backup_pre_simple\ -->
 
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="preload" as="image" href="assets/img/hero.webp">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,14 +40,10 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="site-nav" id="siteNav" aria-label="주 메뉴">
-      <a href="#about">회사 소개</a>
-      <a href="#services">가공 분야</a>
-      <a href="#equipment">설비</a>
-      <a href="#quality">품질</a>
-      <a href="#cases">가공 사례</a>
-      <a href="#ai">AI 공정</a>
-      <a href="#process">작업 흐름</a>
-      <a href="#location">오시는 길</a>
+      <a href="#delivery">납기</a>
+      <a href="#precision">정밀도</a>
+      <a href="#price">가격</a>
+      <a href="#equipment">설비·공정</a>
       <a href="#contact" class="nav-cta">견적 문의</a>
     </nav>
   </div>
@@ -55,332 +53,82 @@
 
 <!-- ===== 첫 화면 ===== -->
 <section class="hero" id="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
-        </pattern>
-      </defs>
-      <rect width="800" height="600" fill="url(#grid)"/>
-    </svg>
-  </div>
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="container hero-inner">
-    <div class="hero-copy">
-      <p class="eyebrow">CNC 밀링 · 선반 · 정밀 부품</p>
-      <h1><span data-site="companyName">삼일정밀</span><br><span class="hero-sub" data-site="slogan">세 번의 정밀함, 한 번의 단순함</span></h1>
-      <p class="hero-lead" data-site="tagline">CNC 밀링·선반으로 샤프트·축류부터 의료기기·장비 부품, 시제품까지 정밀 부품을 외주가공합니다.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-accent">견적 문의하기</a>
-        <a href="#services" class="btn btn-ghost">가공 분야 보기</a>
-      </div>
-      <ul class="hero-points">
-        <li>도면 검토 후 견적</li>
-        <li>소량 다품종 대응</li>
-        <li>출하 전 전수·샘플 검사</li>
-      </ul>
+    <p class="eyebrow">CNC 밀링 · 선반 외주가공</p>
+    <h1><span data-site="companyName">삼일정밀</span><br><span class="hero-sub" data-site="slogan">세 번의 정밀함, 한 번의 단순함</span></h1>
+    <p class="hero-lead" data-site="tagline">약속한 날, 도면대로, 합리적인 값에 깎습니다.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-accent">도면 보내고 견적 받기</a>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <!-- 샤프트 도면 느낌의 SVG 일러스트 -->
-      <svg viewBox="0 0 420 300">
-        <g fill="none" stroke="#A9AFB5" stroke-width="1.5">
-          <!-- 샤프트 외형 -->
-          <path d="M40 135h50v-15h90v-12h110v12h50v15h40v30h-40v15h-50v12H180v-12H90v-15H40z" fill="rgba(169,175,181,.08)"/>
-          <!-- 중심선 -->
-          <path d="M20 150h390" stroke="#A88F68" stroke-dasharray="14 4 3 4" stroke-width="1"/>
-          <!-- 키홈 -->
-          <rect x="210" y="108" width="60" height="7" rx="3.5" stroke="#D5D8DB"/>
-          <!-- 모따기 -->
-          <path d="M40 140l5-5M40 160l5 5M380 140l-5-5" />
-          <!-- 치수선 -->
-          <g stroke="#7E8790" stroke-width="1">
-            <path d="M40 220v-30M380 220v-30M40 212h340"/>
-            <path d="M40 212l8-3v6zM380 212l-8-3v6z" fill="#7E8790"/>
-            <path d="M180 75v30M290 75v30M180 83h110"/>
-            <path d="M180 83l8-3v6zM290 83l-8-3v6z" fill="#7E8790"/>
-            <path d="M335 120h45M335 180h45M372 120v60"/>
-          </g>
-        </g>
-        <g font-family="Pretendard Variable, sans-serif" font-size="12" fill="#D5D8DB">
-          <text x="190" y="206">L 340</text>
-          <text x="205" y="77">Ø 32 h6</text>
-          <text x="384" y="154">Ø 20</text>
-          <text x="40" y="262" fill="#A88F68" font-weight="600">±0.01</text>
-          <text x="92" y="262">Ra 0.8</text>
-          <text x="150" y="262">◎ 0.005</text>
-        </g>
-        <!-- 공구 -->
-        <g transform="translate(300 18)">
-          <rect x="0" y="0" width="22" height="34" rx="2" fill="#3B4048" stroke="#A9AFB5"/>
-          <path d="M4 34h14v22l-7 6-7-6z" fill="#D5D8DB"/>
-          <path d="M4 40l14 4M4 46l14 4M4 52l14 4" stroke="#7E8790"/>
-        </g>
-      </svg>
+    <dl class="nums nums-hero" data-nums="quoteReply,tolerance,minOrder"></dl>
+  </div>
+</section>
+
+<!-- ===== 세 기둥: 납기 · 정밀도 · 가격 ===== -->
+<section class="pillar" id="delivery">
+  <div class="container pillar-inner">
+    <figure class="pillar-img"><img src="assets/img/delivery.webp" width="800" height="600" loading="lazy" alt="출하를 위해 상자에 가지런히 담은 가공 부품"></figure>
+    <div class="pillar-copy">
+      <p class="section-kicker"><b>01</b> 철저한 납기 준수</p>
+      <h2 class="section-title">약속한 날에 받으십니다</h2>
+      <p class="section-desc">견적 때 드린 날짜가 곧 납기입니다. 늦어질 일이 생기면 먼저 연락드립니다.</p>
+      <dl class="nums" data-nums="standardLead,rushLead,delayNotice"></dl>
     </div>
   </div>
 </section>
 
-<!-- ===== 회사 소개 ===== -->
-<section class="section" id="about">
-  <div class="container about-grid">
-    <div>
-      <p class="section-kicker">회사 소개</p>
-      <h2 class="section-title">믿고 맡길 수 있는<br>정밀 가공 파트너</h2>
-      <p class="about-text"><strong data-site="companyName">삼일정밀</strong>은 CNC 밀링과 CNC 선반을 기반으로 산업용 장비, 의료기기, 각종 기계 부품을 도면 기준으로 가공하는 정밀 부품 외주가공 전문 업체입니다.</p>
-      <p class="about-text">한두 개 시제품부터 반복 생산까지, 도면을 받으면 가공 방법·공차·소재를 먼저 검토하고 현실적인 납기와 견적을 드립니다. 가공이 끝난 부품은 측정 후 출하해 조립 현장에서 바로 쓸 수 있게 합니다.</p>
-      <p class="about-text">삼일(三一)이라는 이름처럼, 가공 전에 도면 검토·시뮬레이션·측정 계획으로 세 번 확인하고 한 번에 깎습니다. 단순해야 정확하다고 믿기에, 고객은 도면 한 번 맡기는 것으로 충분하도록 만듭니다.</p>
+<section class="pillar pillar-alt" id="precision">
+  <div class="container pillar-inner pillar-flip">
+    <figure class="pillar-img"><img src="assets/img/precision.webp" width="800" height="600" loading="lazy" alt="마이크로미터로 가공한 축의 지름을 재는 모습"></figure>
+    <div class="pillar-copy">
+      <p class="section-kicker"><b>02</b> 정밀도</p>
+      <h2 class="section-title">도면에 적힌 숫자 그대로</h2>
+      <p class="section-desc">도면 검토, 가공 전 시뮬레이션, 출하 측정. 세 번 확인하고 한 번에 깎습니다.</p>
+      <dl class="nums" data-nums="tolerance,roughness,checks"></dl>
     </div>
-    <dl class="fact-list">
-      <div class="fact"><dt>대표</dt><dd data-site="ceo">[대표자명 입력]</dd></div>
-      <div class="fact"><dt>설립</dt><dd data-site="founded">[설립 연도 입력]</dd></div>
-      <div class="fact"><dt>주요 업무</dt><dd>CNC 밀링·선반 정밀 부품 외주가공</dd></div>
-      <div class="fact"><dt>주요 분야</dt><dd>샤프트·축류, 의료기기·장비 부품, 시제품</dd></div>
-      <div class="fact"><dt>사업자등록번호</dt><dd data-site="bizNo">[사업자등록번호 입력]</dd></div>
-    </dl>
   </div>
 </section>
 
-<!-- ===== 가공 분야 ===== -->
-<section class="section section-alt" id="services">
+<section class="pillar" id="price">
+  <div class="container pillar-inner">
+    <figure class="pillar-img"><img src="assets/img/price.webp" width="800" height="600" loading="lazy" alt="서로 다른 소량 시제품 가공 부품 몇 개"></figure>
+    <div class="pillar-copy">
+      <p class="section-kicker"><b>03</b> 합리적인 가격</p>
+      <h2 class="section-title">한 개를 맡겨도 부담 없이</h2>
+      <p class="section-desc">공정 계획과 프로그램 준비를 자동화해 준비 시간을 줄였습니다. 그만큼 소량 주문도 값이 내려갑니다.</p>
+      <dl class="nums" data-nums="minOrder,quoteFee,aiTime"></dl>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 설비·공정 ===== -->
+<section class="section section-dark" id="equipment">
   <div class="container">
-    <p class="section-kicker">밀링 · 선반</p>
-    <h2 class="section-title">가공 분야</h2>
-    <p class="section-desc">밀링과 선반을 함께 운용해 한 부품의 여러 공정을 한곳에서 처리합니다.</p>
-    <div class="card-grid">
-      <article class="card">
-        <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-mill"/></svg>
-        <h3>CNC 밀링</h3>
-        <p>평면·포켓·윤곽·홀·탭 가공. 블록, 브래킷, 플레이트, 하우징 등 각형 부품을 가공합니다.</p>
-      </article>
-      <article class="card">
-        <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-lathe"/></svg>
-        <h3>CNC 선반</h3>
-        <p>외경·내경·단차·나사·홈 가공. 핀, 부싱, 칼라, 너트 등 원형 부품을 빠르게 가공합니다.</p>
-      </article>
-      <article class="card">
-        <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-axle"/></svg>
-        <h3>샤프트·축류</h3>
-        <p>단차 축, 키홈 축, 나사 축 등. 베어링 끼움부 공차와 동심도를 관리합니다.</p>
-      </article>
-      <article class="card">
-        <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-medical"/></svg>
-        <h3>의료기기·장비 부품</h3>
-        <p>의료 장비의 기구 부품, 자동화 장비 부품을 도면과 사양에 맞춰 가공합니다.</p>
-      </article>
-      <article class="card">
-        <svg class="card-icon" viewBox="0 0 48 48" aria-hidden="true"><use href="#ic-proto"/></svg>
-        <h3>시제품·소량 다품종</h3>
-        <p>개발 단계 시제품, 한두 개 단품, 여러 품목 소량 주문도 부담 없이 맡겨 주세요.</p>
-      </article>
-      <article class="card card-cta">
-        <h3>이런 부품도 되나요?</h3>
-        <p>도면이나 스케치만 있어도 가공 가능 여부를 먼저 알려 드립니다.</p>
-        <a href="#contact" class="btn btn-accent btn-sm">도면 보내기</a>
-      </article>
-    </div>
-  </div>
-</section>
+    <p class="section-kicker">설비 · 공정</p>
+    <h2 class="section-title">깎기 전에 먼저 깎아 봅니다</h2>
+    <p class="section-desc">도면을 받으면 공정과 공구를 자동으로 짜고, 가상 가공으로 과삭·충돌을 확인한 뒤 실제로 깎습니다.</p>
 
-<!-- ===== 설비 현황 ===== -->
-<section class="section" id="equipment">
-  <div class="container">
-    <p class="section-kicker">가공 · 측정</p>
-    <h2 class="section-title">설비 현황</h2>
-    <p class="section-desc">가공과 측정 설비를 갖추고 공정별로 운용합니다.</p>
-    <div class="table-wrap">
-      <table class="equip-table">
-        <thead>
-          <tr><th scope="col">구분</th><th scope="col">설비</th><th scope="col">사양</th><th scope="col">대수</th></tr>
-        </thead>
-        <tbody id="equipBody">
-          <!-- main.js 의 SITE.equipment 로 채워짐 -->
-        </tbody>
-      </table>
+    <div class="sim-row">
+      <figure class="sim"><img src="assets/ai/plate.gif" width="720" height="540" loading="lazy" alt="판 부품 가공 시뮬레이션: 윗면·윤곽·홈을 깎고 구멍을 뚫는 과정"><figcaption>판 부품 · 머시닝센터</figcaption></figure>
+      <figure class="sim"><img src="assets/ai/turned.gif" width="720" height="540" loading="lazy" alt="축 부품 선반 가공 시뮬레이션: 둥근 봉재를 단차 축으로 깎는 과정"><figcaption>단차 축 · CNC 선반</figcaption></figure>
+      <figure class="sim"><img src="assets/ai/millturn.gif" width="720" height="540" loading="lazy" alt="선반 뒤 머시닝으로 키홈·옆 구멍을 가공하는 시뮬레이션"><figcaption>복합 부품 · 선반 + 머시닝</figcaption></figure>
     </div>
-    <p class="note">※ 설비 사양과 대수는 실제 보유 현황에 맞게 수정해 주세요.</p>
-  </div>
-</section>
+    <p class="foot-note">※ 설명용으로 만든 시험 부품입니다. 고객 도면은 공개하지 않습니다.</p>
 
-<!-- ===== 품질·공차 관리 ===== -->
-<section class="section section-dark" id="quality">
-  <div class="container">
-    <p class="section-kicker">가공 전 · 중 · 후</p>
-    <h2 class="section-title">품질·공차 관리</h2>
-    <p class="section-desc">도면에 적힌 숫자를 지키는 것이 기본입니다. 가공 전·중·후로 나눠 확인합니다.</p>
-    <div class="quality-grid">
-      <div class="q-item">
-        <span class="q-num">01</span>
-        <h3>도면 검토</h3>
-        <p>공차·기하공차·표면 거칠기·열처리·후처리 조건을 가공 전에 확인하고, 애매한 부분은 먼저 여쭙니다.</p>
-      </div>
-      <div class="q-item">
-        <span class="q-num">02</span>
-        <h3>초품 확인</h3>
-        <p>첫 부품을 가공한 뒤 주요 치수를 측정해 맞는지 확인하고 나머지 수량을 진행합니다.</p>
-      </div>
-      <div class="q-item">
-        <span class="q-num">03</span>
-        <h3>공정 중 측정</h3>
-        <p>공구 마모와 열 변형을 고려해 일정 수량마다 끼움부·나사부 등 핵심 치수를 다시 잽니다.</p>
-      </div>
-      <div class="q-item">
-        <span class="q-num">04</span>
-        <h3>출하 검사</h3>
-        <p>외관·버(거스러미)·치수를 확인하고, 요청 시 측정 성적서를 함께 보내 드립니다.</p>
+    <div class="equip-grid">
+      <dl class="nums nums-dark" data-nums="millRange,latheDia,materials"></dl>
+      <div class="table-wrap">
+        <table class="equip-table">
+          <thead>
+            <tr><th scope="col">구분</th><th scope="col">설비</th><th scope="col">사양</th><th scope="col">대수</th></tr>
+          </thead>
+          <tbody id="equipBody">
+            <!-- main.js 의 SITE.equipment 로 채워짐 -->
+          </tbody>
+        </table>
       </div>
     </div>
-    <ul class="tol-list">
-      <li><strong>치수 공차</strong><span>도면 지정 공차 기준 (일반 공차는 KS/ISO 2768 기준 협의)</span></li>
-      <li><strong>끼워맞춤</strong><span>h6·H7 등 끼워맞춤 공차 대응</span></li>
-      <li><strong>측정</strong><span>마이크로미터·하이트게이지·나사 게이지 등 (보유 장비는 설비 표 참고)</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== 가공 사례 ===== -->
-<section class="section" id="cases">
-  <div class="container">
-    <p class="section-kicker">부품 종류</p>
-    <h2 class="section-title">가공 사례</h2>
-    <p class="section-desc">고객사 도면 보호를 위해 부품 종류만 소개합니다.</p>
-    <div class="case-grid">
-      <figure class="case">
-        <div class="case-art"><svg viewBox="0 0 160 100" aria-hidden="true"><use href="#art-axle"/></svg></div>
-        <figcaption><strong>단차 샤프트</strong><span>CNC 선반 · 키홈 밀링 · 끼움부 공차</span></figcaption>
-      </figure>
-      <figure class="case">
-        <div class="case-art"><svg viewBox="0 0 160 100" aria-hidden="true"><use href="#art-medical"/></svg></div>
-        <figcaption><strong>의료 장비 기구 부품</strong><span>CNC 밀링 · 홀·탭 · 모서리 라운드</span></figcaption>
-      </figure>
-      <figure class="case">
-        <div class="case-art"><svg viewBox="0 0 160 100" aria-hidden="true"><use href="#art-bracket"/></svg></div>
-        <figcaption><strong>장비용 브래킷</strong><span>CNC 밀링 · 포켓 · 장공</span></figcaption>
-      </figure>
-      <figure class="case">
-        <div class="case-art"><svg viewBox="0 0 160 100" aria-hidden="true"><use href="#art-bushing"/></svg></div>
-        <figcaption><strong>부싱·칼라</strong><span>CNC 선반 · 내경 · 모따기</span></figcaption>
-      </figure>
-      <figure class="case">
-        <div class="case-art"><svg viewBox="0 0 160 100" aria-hidden="true"><use href="#art-flange"/></svg></div>
-        <figcaption><strong>플랜지</strong><span>선반 + 밀링 복합 · 볼트 홀 PCD</span></figcaption>
-      </figure>
-      <figure class="case">
-        <div class="case-art"><svg viewBox="0 0 160 100" aria-hidden="true"><use href="#art-proto"/></svg></div>
-        <figcaption><strong>시제품 하우징</strong><span>CNC 밀링 · 소량 · 형상 가공</span></figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===== AI 기반 소량 다품종 특화 공정 ===== -->
-<!-- 예시 그림·숫자는 합성(시험) 부품을 자체 CAM 시뮬레이션으로 돌린 결과 (고객 도면 아님) -->
-<section class="section section-dark ai-section" id="ai">
-  <div class="container">
-    <p class="section-kicker">자동 공정 계획</p>
-    <h2 class="section-title">AI 기반 소량 다품종 특화 공정</h2>
-    <div class="ai-why">
-      <p class="section-desc">시제품 1개부터 수십 개까지, 품목은 많고 수량은 적은 주문일수록 가공 그 자체보다 <strong>품목마다 새로 공정을 짜고 프로그램을 만드는 준비 시간</strong>이 원가의 큰 몫을 차지합니다.</p>
-      <p class="section-desc">삼일정밀은 도면을 받으면 AI 가 형상을 읽고 공정·공구·물림을 자동으로 계획한 뒤, 깎기 전에 시뮬레이션으로 확인합니다. 준비 시간을 줄여 한두 개 주문도 빠르고 부담 없이 맡으실 수 있습니다.</p>
-    </div>
-
-    <ol class="ai-flow" aria-label="AI 공정 흐름 5단계">
-      <li><span class="ai-step">1</span><h3>도면 접수·AI 판독</h3><p>형상·치수·재질·구멍 지시를 도면에서 읽어 3D 부품으로 만듭니다.</p></li>
-      <li><span class="ai-step">2</span><h3>꼭 필요한 것만 확인</h3><p>도면에 없는 것 중 결과를 바꾸는 것만 골라 짧게 여쭙니다. (수량·공차·면 거칠기 등)</p></li>
-      <li><span class="ai-step">3</span><h3>공정 자동 계획</h3><p>몇 번 물릴지, 어떤 순서·어떤 공구로 깎을지 정하고 가공 프로그램까지 만듭니다.</p></li>
-      <li><span class="ai-step">4</span><h3>가공 전 시뮬레이션·검사</h3><p>가상으로 먼저 깎아 보고 과삭·덜 깎임·공구 충돌을 자동으로 확인합니다.</p></li>
-      <li><span class="ai-step">5</span><h3>가공</h3><p>검사를 통과한 공정으로 실제 가공하고, 초품·출하 검사로 한 번 더 확인합니다.</p></li>
-    </ol>
-
-    <h3 class="ai-sub">예시 — 도면에서 자동 공정 결과까지</h3>
-    <p class="ai-note">고객사 도면 보호를 위해 아래 예시는 모두 <strong>설명용으로 만든 시험 부품</strong>입니다.</p>
-    <div class="ai-cases">
-      <article class="ai-case">
-        <div class="ai-media">
-          <img src="assets/ai/plate.gif" width="720" height="540" loading="lazy" alt="판 부품 가공 시뮬레이션 영상: 사각 소재에서 공구가 윗면·바깥 윤곽·U홈을 깎고 관통 구멍 6개를 뚫어 완성하는 과정">
-          <figure class="ai-draw">
-            <svg viewBox="0 0 150 104" aria-hidden="true"><use href="#dw-plate"/></svg>
-            <figcaption>도면</figcaption>
-          </figure>
-        </div>
-        <div class="ai-body">
-          <p class="ai-tag">판 부품 · 머시닝센터</p>
-          <h4>구멍·U홈 판 <small>120×80×20 · SM45C</small></h4>
-          <p class="ai-read">도면에서 크기·재질·관통 구멍 6개를 읽고, 수량 등 5가지만 확인</p>
-          <dl class="ai-nums">
-            <div><dt>공정</dt><dd>2<small>회 물림</small></dd></div>
-            <div><dt>작업·공구</dt><dd>10<small>작업</small> · 4<small>종</small></dd></div>
-            <div><dt>예상 가공</dt><dd>35<small>분</small> 48<small>초</small></dd></div>
-            <div><dt>가공 전 검사</dt><dd class="ok">통과<small>과삭 0 · 충돌 0</small></dd></div>
-          </dl>
-        </div>
-      </article>
-      <article class="ai-case">
-        <div class="ai-media">
-          <img src="assets/ai/turned.gif" width="720" height="540" loading="lazy" alt="축 부품 선반 가공 시뮬레이션 영상: 척에 물린 둥근 봉재가 세 단 지름과 홈으로 깎여 나가는 과정">
-          <figure class="ai-draw">
-            <svg viewBox="0 0 150 104" aria-hidden="true"><use href="#dw-turned"/></svg>
-            <figcaption>도면</figcaption>
-          </figure>
-        </div>
-        <div class="ai-body">
-          <p class="ai-tag">축 부품 · CNC 선반</p>
-          <h4>단차 축 <small>Ø32×110 · SM45C</small></h4>
-          <p class="ai-read">도면에서 단·홈·모따기와 재질을 읽고, 기계·물림·수량 3가지만 확인</p>
-          <dl class="ai-nums">
-            <div><dt>공정</dt><dd>1<small>회 물림</small></dd></div>
-            <div><dt>작업·공구</dt><dd>6<small>작업</small> · 4<small>종</small></dd></div>
-            <div><dt>예상 가공</dt><dd>1<small>분</small> 54<small>초</small></dd></div>
-            <div><dt>가공 전 검사</dt><dd class="ok">통과<small>치수·남은 살 확인</small></dd></div>
-          </dl>
-        </div>
-      </article>
-      <article class="ai-case">
-        <div class="ai-media">
-          <img src="assets/ai/millturn.gif" width="720" height="540" loading="lazy" alt="선반과 머시닝을 함께 쓰는 축 부품 가공 시뮬레이션 영상: 선반으로 단차 축을 깎은 뒤 물림을 바꿔 키홈·옆 구멍·플랜지 구멍 4개를 가공하는 과정">
-          <figure class="ai-draw">
-            <svg viewBox="0 0 150 104" aria-hidden="true"><use href="#dw-millturn"/></svg>
-            <figcaption>도면</figcaption>
-          </figure>
-        </div>
-        <div class="ai-body">
-          <p class="ai-tag">복합 부품 · 선반 + 머시닝</p>
-          <h4>키홈·옆 구멍 축 <small>Ø40×100 · 알루미늄</small></h4>
-          <p class="ai-read">돌려 깎을 곳과 밀링할 곳(키홈·옆 구멍·평면 자리·플랜지 구멍)을 나눠 공정 순서를 정함</p>
-          <dl class="ai-nums">
-            <div><dt>공정</dt><dd>5<small>(선반 2·머시닝 3)</small></dd></div>
-            <div><dt>작업·공구</dt><dd>16<small>작업</small> · 12<small>종</small></dd></div>
-            <div><dt>예상 가공</dt><dd>3<small>분</small> 23<small>초</small></dd></div>
-            <div><dt>가공 전 검사</dt><dd class="ok">통과<small>5개 공정 모두</small></dd></div>
-          </dl>
-        </div>
-      </article>
-    </div>
-    <p class="ai-foot">※ 예상 가공 시간은 물림·원점 준비 시간을 뺀 시뮬레이션 값입니다. 실제 시간은 기계·소재·공구 상태에 따라 달라집니다.</p>
-
-    <div class="ai-results">
-      <h3 class="ai-sub">AI 가 공정을 다듬은 결과 <small>시험 부품 기준</small></h3>
-      <ul class="ai-stats">
-        <li><strong>−30.9<small>%</small></strong><span>예상 가공 시간<br><em>18,790초 → 12,992초</em></span></li>
-        <li><strong>70 → 46<small>회</small></strong><span>공구 교환 횟수</span></li>
-        <li><strong>42 → 32<small>종</small></strong><span>쓰는 공구 가짓수</span></li>
-      </ul>
-      <p class="ai-foot">판 부품 시험 10종 합계. 자동으로 짠 공정을 AI 가 다시 다듬되, 가공 전 검사에서 과삭·덜 깎임이 늘지 않은 안만 채택했습니다.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===== 작업 흐름 ===== -->
-<section class="section section-alt" id="process">
-  <div class="container">
-    <p class="section-kicker">도면에서 납품까지</p>
-    <h2 class="section-title">작업 흐름</h2>
-    <ol class="flow">
-      <li><span class="flow-step">1</span><h3>도면 접수</h3><p>이메일이나 문의 폼으로 도면(PDF·DWG·STEP 등)과 수량·납기를 보내 주세요.</p></li>
-      <li><span class="flow-step">2</span><h3>검토·견적</h3><p>가공 방법·소재·공차를 검토해 견적과 예상 납기를 회신드립니다.</p></li>
-      <li><span class="flow-step">3</span><h3>가공</h3><p>확정 후 CAM 작업과 CNC 밀링·선반 가공을 진행합니다.</p></li>
-      <li><span class="flow-step">4</span><h3>검사</h3><p>초품·공정·출하 검사로 도면 치수를 확인합니다.</p></li>
-      <li><span class="flow-step">5</span><h3>납품</h3><p>포장 후 택배·화물·직접 납품 중 편한 방법으로 보내 드립니다.</p></li>
-    </ol>
   </div>
 </section>
 
@@ -390,16 +138,20 @@
     <div class="contact-info">
       <p class="section-kicker">도면 · 수량 · 납기</p>
       <h2 class="section-title">견적 문의</h2>
-      <p class="section-desc">도면과 수량, 원하는 납기를 알려 주시면 검토 후 연락드립니다.</p>
+      <p class="section-desc">도면과 수량, 원하는 날짜만 보내 주세요. <b data-num-inline="quoteReply">1영업일 안</b>에 견적과 납기를 회신드립니다.</p>
+      <ol class="steps" aria-label="진행 순서">
+        <li>도면 보내기</li><li>견적·납기 회신</li><li>가공·검사</li><li>납품</li>
+      </ol>
       <ul class="contact-list">
         <li><span>전화</span><a data-site="phone" data-site-href="tel" href="#">[전화번호 입력]</a></li>
         <li><span>팩스</span><b data-site="fax">[팩스번호 입력]</b></li>
         <li><span>이메일</span><a data-site="email" data-site-href="mailto" href="#">[이메일 입력]</a></li>
         <li><span>상담 시간</span><b data-site="hours">[상담 시간 입력]</b></li>
+        <li><span>주소</span><b data-site="address">[주소 입력]</b></li>
       </ul>
-      <div class="tip">
-        <strong>도면 파일 안내</strong>
-        <p>지금은 문의 폼에서 파일이 자동으로 전송되지 않습니다. 보내기를 누르면 메일 앱이 열리니, 그 메일에 도면 파일을 직접 첨부해 보내 주세요.</p>
+      <div class="map-links">
+        <a class="btn btn-outline btn-sm" id="naverMap" href="#" target="_blank" rel="noopener">네이버 지도</a>
+        <a class="btn btn-outline btn-sm" id="kakaoMap" href="#" target="_blank" rel="noopener">카카오맵</a>
       </div>
     </div>
 
@@ -432,7 +184,7 @@
       </div>
       <div class="form-row">
         <label for="fMsg">문의 내용 <em>*</em></label>
-        <textarea id="fMsg" name="message" rows="5" required placeholder="부품명, 소재, 수량, 희망 납기, 후처리(도금·열처리 등)를 적어 주세요."></textarea>
+        <textarea id="fMsg" name="message" rows="4" required placeholder="부품명, 소재, 수량, 희망 납기를 적어 주세요."></textarea>
         <p class="err" data-for="fMsg"></p>
       </div>
       <div class="form-row">
@@ -442,7 +194,7 @@
           <label for="fFile" class="btn btn-outline btn-sm">파일 선택</label>
           <span class="file-names" id="fileNames">선택된 파일 없음</span>
         </div>
-        <p class="hint">※ 파일은 자동 전송되지 않습니다. 열리는 메일에 직접 첨부해 주세요.</p>
+        <p class="hint">※ 보내기를 누르면 메일 앱이 열립니다. 도면은 그 메일에 직접 첨부해 주세요.</p>
       </div>
       <div class="form-row agree">
         <label class="check">
@@ -461,45 +213,6 @@
   </div>
 </section>
 
-<!-- ===== 오시는 길 ===== -->
-<section class="section section-alt" id="location">
-  <div class="container loc-grid">
-    <div>
-      <p class="section-kicker">주소 · 주차</p>
-      <h2 class="section-title">오시는 길</h2>
-      <ul class="contact-list">
-        <li><span>주소</span><b data-site="address">[주소 입력]</b></li>
-        <li><span>전화</span><a data-site="phone" data-site-href="tel" href="#">[전화번호 입력]</a></li>
-        <li><span>이메일</span><a data-site="email" data-site-href="mailto" href="#">[이메일 입력]</a></li>
-        <li><span>주차</span><b data-site="parking">[주차 안내 입력]</b></li>
-      </ul>
-      <div class="map-links">
-        <a class="btn btn-outline btn-sm" id="naverMap" href="#" target="_blank" rel="noopener">네이버 지도</a>
-        <a class="btn btn-outline btn-sm" id="kakaoMap" href="#" target="_blank" rel="noopener">카카오맵</a>
-      </div>
-    </div>
-    <div class="map-box" aria-label="지도 자리">
-      <!-- 실제 지도는 네이버/카카오 지도 '퍼가기' iframe 을 여기에 넣으면 됩니다 -->
-      <svg viewBox="0 0 400 260" aria-hidden="true">
-        <rect width="400" height="260" fill="#ECEAE6"/>
-        <g stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round">
-          <path d="M-10 190 C120 170 220 210 410 150"/>
-          <path d="M140 -10 L170 270"/>
-          <path d="M280 -10 C270 90 300 170 330 270"/>
-        </g>
-        <g stroke="#D9D6D0" stroke-width="2" fill="none">
-          <path d="M-10 80 H410"/><path d="M60 -10 V270"/>
-        </g>
-        <g transform="translate(222 92)">
-          <path d="M0 -36c-13 0-22 10-22 22 0 17 22 40 22 40s22-23 22-40c0-12-9-22-22-22z" fill="#D32A1F"/>
-          <circle cx="0" cy="-14" r="8" fill="#fff"/>
-        </g>
-      </svg>
-      <p class="map-caption" data-site="companyName">삼일정밀</p>
-    </div>
-  </div>
-</section>
-
 </main>
 
 <!-- ===== 하단 ===== -->
@@ -511,134 +224,18 @@
     <p class="footer-info">
       <span>상호 <b data-site="companyName">삼일정밀</b></span>
       <span>대표 <b data-site="ceo">[대표자명 입력]</b></span>
+      <span>설립 <b data-site="founded">[설립 연도 입력]</b></span>
       <span>사업자등록번호 <b data-site="bizNo">[사업자등록번호 입력]</b></span><br>
       <span>주소 <b data-site="address">[주소 입력]</b></span>
       <span>전화 <b data-site="phone">[전화번호 입력]</b></span>
       <span>이메일 <b data-site="email">[이메일 입력]</b></span>
+      <span>주차 <b data-site="parking">[주차 안내 입력]</b></span>
     </p>
     <p class="copy">© <span id="year">2026</span> <span data-site="companyName">삼일정밀</span>.</p>
   </div>
 </footer>
 
 <a href="#hero" class="to-top" id="toTop" aria-label="맨 위로">↑</a>
-
-<!-- ===== 공용 SVG 기호 ===== -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="ic-mill" viewBox="0 0 48 48">
-      <rect x="18" y="4" width="12" height="14" rx="2" fill="currentColor" opacity=".25"/>
-      <path d="M20 18h8v14l-4 4-4-4z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
-      <path d="M20 22l8 3M20 27l8 3" stroke="currentColor" stroke-width="2"/>
-      <rect x="6" y="38" width="36" height="6" rx="1.5" fill="currentColor"/>
-    </symbol>
-    <symbol id="ic-lathe" viewBox="0 0 48 48">
-      <rect x="4" y="14" width="10" height="20" rx="2" fill="currentColor"/>
-      <rect x="14" y="19" width="26" height="10" rx="1.5" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <path d="M30 40l6-11 4 2-5 9z" fill="currentColor" opacity=".55"/>
-      <path d="M22 9a7 7 0 0 1 8 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M30 8v3h-3" fill="none" stroke="currentColor" stroke-width="2"/>
-    </symbol>
-    <symbol id="ic-axle" viewBox="0 0 48 48">
-      <path d="M3 20h8v-4h12v-2h12v2h6v4h4v8h-4v4h-6v2H23v-2H11v-4H3z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
-      <path d="M1 24h46" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 2 1 2"/>
-      <rect x="26" y="15" width="7" height="3" rx="1.5" fill="currentColor"/>
-    </symbol>
-    <symbol id="ic-medical" viewBox="0 0 48 48">
-      <rect x="6" y="6" width="22" height="22" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <path d="M17 11v12M11 17h12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-      <circle cx="35" cy="35" r="8" fill="none" stroke="currentColor" stroke-width="2.4"/>
-      <circle cx="35" cy="35" r="3" fill="currentColor"/>
-      <path d="M28 28l-3-3" stroke="currentColor" stroke-width="2.4"/>
-    </symbol>
-    <symbol id="ic-proto" viewBox="0 0 48 48">
-      <path d="M24 4l17 10v20L24 44 7 34V14z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/>
-      <path d="M7 14l17 10 17-10M24 24v20" fill="none" stroke="currentColor" stroke-width="2"/>
-      <circle cx="24" cy="14" r="3" fill="currentColor"/>
-    </symbol>
-
-    <!-- 가공 사례 일러스트 -->
-    <symbol id="art-axle" viewBox="0 0 160 100">
-      <path d="M12 42h22v-6h40v-4h40v4h22v6h12v16h-12v6h-22v4H74v-4H34v-6H12z" fill="url(#steel)" stroke="#5E6B78" stroke-width="1.5"/>
-      <rect x="84" y="33" width="22" height="4" rx="2" fill="#3B4048"/>
-      <path d="M4 50h152" stroke="#A88F68" stroke-width="1" stroke-dasharray="8 3 2 3"/>
-    </symbol>
-    <symbol id="art-medical" viewBox="0 0 160 100">
-      <path d="M30 22h70a14 14 0 0 1 14 14v8H70v34H44V36a14 14 0 0 0-14-14z" fill="url(#steel)" stroke="#5E6B78" stroke-width="1.5"/>
-      <rect x="22" y="18" width="16" height="10" rx="3" fill="#3B4048"/>
-      <circle cx="57" cy="56" r="5" fill="#fff" stroke="#5E6B78"/>
-      <circle cx="57" cy="70" r="3" fill="#fff" stroke="#5E6B78"/>
-      <circle cx="96" cy="36" r="4" fill="#fff" stroke="#5E6B78"/>
-      <path d="M114 40h22l8 10-8 10h-22" fill="none" stroke="#A88F68" stroke-width="1.5" stroke-dasharray="4 3"/>
-    </symbol>
-    <symbol id="art-bracket" viewBox="0 0 160 100">
-      <path d="M30 20h26v46h74v16H30z" fill="url(#steel)" stroke="#5E6B78" stroke-width="1.5"/>
-      <rect x="37" y="30" width="12" height="22" rx="6" fill="#fff" stroke="#5E6B78"/>
-      <rect x="72" y="70" width="22" height="7" rx="3.5" fill="#fff" stroke="#5E6B78"/>
-      <rect x="104" y="70" width="18" height="7" rx="3.5" fill="#fff" stroke="#5E6B78"/>
-      <path d="M56 66l-8-8" stroke="#3B4048" stroke-width="2"/>
-    </symbol>
-    <symbol id="art-bushing" viewBox="0 0 160 100">
-      <ellipse cx="62" cy="50" rx="30" ry="30" fill="url(#steel)" stroke="#5E6B78" stroke-width="1.5"/>
-      <ellipse cx="62" cy="50" rx="14" ry="14" fill="#fff" stroke="#5E6B78" stroke-width="1.5"/>
-      <ellipse cx="62" cy="50" rx="18" ry="18" fill="none" stroke="#A9AFB5" stroke-width="1" stroke-dasharray="3 2"/>
-      <rect x="104" y="26" width="34" height="48" rx="2" fill="url(#steel)" stroke="#5E6B78" stroke-width="1.5"/>
-      <rect x="104" y="40" width="34" height="20" fill="#fff" stroke="#5E6B78" stroke-width="1" stroke-dasharray="3 2"/>
-      <path d="M104 30l4-4M138 30l-4-4M104 70l4 4M138 70l-4 4" stroke="#5E6B78"/>
-    </symbol>
-    <symbol id="art-flange" viewBox="0 0 160 100">
-      <circle cx="80" cy="50" r="38" fill="url(#steel)" stroke="#5E6B78" stroke-width="1.5"/>
-      <circle cx="80" cy="50" r="14" fill="#fff" stroke="#5E6B78" stroke-width="1.5"/>
-      <circle cx="80" cy="50" r="27" fill="none" stroke="#A88F68" stroke-width="1" stroke-dasharray="5 3"/>
-      <g fill="#fff" stroke="#5E6B78">
-        <circle cx="80" cy="23" r="4"/><circle cx="107" cy="50" r="4"/><circle cx="80" cy="77" r="4"/><circle cx="53" cy="50" r="4"/>
-        <circle cx="99" cy="31" r="4"/><circle cx="99" cy="69" r="4"/><circle cx="61" cy="69" r="4"/><circle cx="61" cy="31" r="4"/>
-      </g>
-    </symbol>
-    <symbol id="art-proto" viewBox="0 0 160 100">
-      <path d="M40 30l50-14 40 18v40l-50 14-40-18z" fill="url(#steel)" stroke="#5E6B78" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M40 30l40 18 50-14M80 48v40" fill="none" stroke="#5E6B78" stroke-width="1.5"/>
-      <path d="M58 30l30-8 22 10-30 8z" fill="#3B4048" opacity=".55"/>
-      <circle cx="96" cy="62" r="6" fill="#fff" stroke="#5E6B78"/>
-      <circle cx="114" cy="56" r="4" fill="#fff" stroke="#5E6B78"/>
-    </symbol>
-    <!-- AI 공정 예시용 시험 부품 도면 (설명용으로 만든 형상) -->
-    <symbol id="dw-plate" viewBox="0 0 150 104">
-      <g fill="none" stroke="#23262B" stroke-width="1.1">
-        <path d="M18 8H122A8 8 0 0 1 130 16V41H107A7 7 0 0 0 107 55H130V80A8 8 0 0 1 122 88H18A8 8 0 0 1 10 80V16A8 8 0 0 1 18 8Z"/>
-        <circle cx="22" cy="20" r="4.5"/><circle cx="118" cy="20" r="4.5"/><circle cx="22" cy="76" r="4.5"/><circle cx="118" cy="76" r="4.5"/>
-        <circle cx="50" cy="33" r="5"/><circle cx="50" cy="63" r="5"/>
-      </g>
-      <g stroke="#7E8790" stroke-width=".7"><path d="M10 96H130M10 92v8M130 92v8"/></g>
-      <g font-family="Pretendard Variable, sans-serif" font-size="7" fill="#5A6069"><text x="64" y="103">120</text><text x="58" y="47" fill="#A88F68">관통 6</text></g>
-    </symbol>
-    <symbol id="dw-turned" viewBox="0 0 150 104">
-      <g transform="translate(12 50) scale(1.15)">
-        <path d="M0 -9L1 -10H30V-12.5H40V-10.5H43V-12.5H65V-16H109L110 -15V15L109 16H65V12.5H43V10.5H40V12.5H30V10H1L0 9Z" fill="none" stroke="#23262B" stroke-width=".95"/>
-        <path d="M-6 0H116" stroke="#A88F68" stroke-width=".6" stroke-dasharray="7 2 1.5 2"/>
-        <path d="M30 -10V10M65 -12.5V12.5" stroke="#23262B" stroke-width=".5"/>
-        <g stroke="#7E8790" stroke-width=".6"><path d="M0 30H110M0 26v8M110 26v8"/></g>
-      </g>
-      <g font-family="Pretendard Variable, sans-serif" font-size="7" fill="#5A6069"><text x="70" y="96">110</text><text x="104" y="22">Ø32</text><text x="18" y="34">Ø20</text></g>
-    </symbol>
-    <symbol id="dw-millturn" viewBox="0 0 150 104">
-      <g transform="translate(12 50) scale(1.25)">
-        <path d="M0 -12.5H40V-20H54V-15H78V-10H100V10H78V15H54V20H40V12.5H0Z" fill="none" stroke="#23262B" stroke-width=".85"/>
-        <path d="M-5 0H105" stroke="#A88F68" stroke-width=".5" stroke-dasharray="7 2 1.5 2"/>
-        <rect x="7" y="-4" width="25" height="8" rx="4" fill="none" stroke="#23262B" stroke-width=".7"/>
-        <circle cx="66" cy="0" r="3" fill="none" stroke="#23262B" stroke-width=".7"/>
-        <path d="M57 -12H75" stroke="#23262B" stroke-width=".6"/>
-        <path d="M44 -20V20M50 -20V20" stroke="#7E8790" stroke-width=".5" stroke-dasharray="2 1.5"/>
-        <path d="M82 -10V10" stroke="#23262B" stroke-width=".4"/>
-      </g>
-      <g font-family="Pretendard Variable, sans-serif" font-size="7" fill="#5A6069"><text x="20" y="80">키홈</text><text x="88" y="80">옆 구멍</text><text x="60" y="18">Ø40</text></g>
-    </symbol>
-    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#EEEEED"/>
-      <stop offset=".45" stop-color="#CDD0D3"/>
-      <stop offset="1" stop-color="#A8ADB3"/>
-    </linearGradient>
-  </defs>
-</svg>
 
 <script src="main.js"></script>
 </body>
