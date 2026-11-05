@@ -9,7 +9,7 @@ const SITE = {
   companyName: "삼일정밀",
   companyNameEn: "SAMIL PRECISION",
   slogan: "세 번의 정밀함, 한 번의 단순함",
-  tagline: "약속한 날, 도면대로, 합리적인 값에 깎습니다.",
+  tagline: "납기 철저, 정밀 가공, 합리적인 가격을 지향합니다.",
 
   ceo: "[대표자명 입력]",
   founded: "[설립 연도 입력]",
