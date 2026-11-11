@@ -9,7 +9,7 @@ const SITE = {
   companyName: "삼일정밀",
   companyNameEn: "SAMIL PRECISION",
   slogan: "세 번의 정밀함, 한 번의 단순함",
-  tagline: "납기 철저, 정밀 가공, 합리적인 가격을 지향합니다.",
+  tagline: "납기는 지키고, 도면대로 깎고, 값은 합리적으로 받습니다.",
 
   ceo: "[대표자명 입력]",
   founded: "[설립 연도 입력]",
@@ -37,18 +37,18 @@ const SITE = {
    * ------------------------------------------------------------------- */
   numbers: {
     // 납기
-    quoteReply:  { value: "1",      unit: "영업일 안", label: "견적·납기 회신", inline: "1영업일 안" },   // LLM 추정 — 실제 값 확인 필요
-    standardLead:{ value: "7",      unit: "영업일",   label: "표준 납기 (단순 부품·소량 기준)" },        // LLM 추정 — 실제 값 확인 필요
-    rushLead:    { value: "2",      unit: "영업일부터", label: "급행 납기 (협의)" },                    // LLM 추정 — 실제 값 확인 필요
-    delayNotice: { value: "2",      unit: "일 전",    label: "늦어질 일이 생기면 미리 연락" },          // LLM 추정(약속) — 실제 값 확인 필요
+    quoteReply:  { value: "1",      unit: "영업일 안", label: "견적·납기 답변", inline: "1영업일 안" },   // LLM 추정 — 실제 값 확인 필요
+    standardLead:{ value: "7",      unit: "영업일",   label: "보통 납기 (단순한 부품 소량 기준)" },        // LLM 추정 — 실제 값 확인 필요
+    rushLead:    { value: "2",      unit: "영업일부터", label: "급한 건 (협의)" },                    // LLM 추정 — 실제 값 확인 필요
+    delayNotice: { value: "2",      unit: "일 전",    label: "늦어질 것 같으면 미리 연락" },          // LLM 추정(약속) — 실제 값 확인 필요
     // 정밀도
-    tolerance:   { value: "±0.01",  unit: "mm",      label: "가공 공차 (더 엄격한 공차는 협의)" },     // LLM 추정 — 실제 값 확인 필요
+    asDrawn:     { value: "도면",   unit: "대로",    label: "치수와 모양은 도면 기준" },              // 숫자 아님 — 글자 칸
     roughness:   { value: "Ra 0.8", unit: "μm",      label: "표면 거칠기 (정삭 기준)" },              // LLM 추정 — 실제 값 확인 필요
-    checks:      { value: "3",      unit: "번 확인",  label: "도면 검토·가상 가공·출하 측정" },        // 슬로건 '세 번의 정밀함' 과 같은 뜻
+    checks:      { value: "3",      unit: "번 확인",  label: "도면 검토·가상 가공·출하 전 측정" },        // 슬로건 '세 번의 정밀함' 과 같은 뜻
     // 가격
     minOrder:    { value: "1",      unit: "개부터",   label: "최소 주문 수량" },                       // LLM 추정 — 실제 값 확인 필요
     quoteFee:    { value: "0",      unit: "원",      label: "견적·도면 검토 비용" },                   // LLM 추정 — 실제 값 확인 필요
-    aiTime:      { value: "−30.9",  unit: "%",       label: "자동 공정 다듬기 후 가공 시간 (시험 부품 10종)" }, // 시험 부품 시뮬레이션 실측 (18,790초 → 12,992초)
+    aiTime:      { value: "−30.9",  unit: "%",       label: "공정을 자동으로 다듬은 뒤 가공 시간 (시험 부품 10종)" }, // 시험 부품 시뮬레이션 실측 (18,790초 → 12,992초)
     // 설비
     millRange:   { value: "800×500", unit: "mm",     label: "밀링 가공 범위 (가로×세로)" },            // LLM 추정 — 실제 설비 사양으로 바꿔 주세요
     latheDia:    { value: "Ø250",   unit: "mm",      label: "선반 최대 가공 지름" },                   // LLM 추정 — 실제 설비 사양으로 바꿔 주세요
@@ -282,7 +282,7 @@ async function submitForm(form) {
         headers: { Accept: "application/json" },
       });
       if (!res.ok) throw new Error(res.status);
-      status.textContent = "문의가 접수되었습니다. 검토 후 연락드리겠습니다.";
+      status.textContent = "문의를 받았습니다. 도면을 살펴보고 연락드리겠습니다.";
       form.reset();
     } catch (e) {
       status.classList.add("error");
