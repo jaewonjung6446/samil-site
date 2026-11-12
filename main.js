@@ -47,7 +47,7 @@ const SITE = {
     checks:      { value: "3",      unit: "번 확인",  label: "도면 검토·가상 가공·출하 전 측정" },        // 슬로건 '세 번의 정밀함' 과 같은 뜻
     // 가격
     minOrder:    { value: "1",      unit: "개부터",   label: "최소 주문 수량" },                       // LLM 추정 — 실제 값 확인 필요
-    quoteFee:    { value: "0",      unit: "원",      label: "견적·도면 검토 비용" },                   // LLM 추정 — 실제 값 확인 필요
+    quoteFee:    { value: "0",      unit: "원",      label: "견적·도면 검토 비용", inline: "무료" },                   // LLM 추정 — 실제 값 확인 필요
     aiTime:      { value: "−30.9",  unit: "%",       label: "공정을 자동으로 다듬은 뒤 가공 시간 (시험 부품 10종)" }, // 시험 부품 시뮬레이션 실측 (18,790초 → 12,992초)
     // 설비
     millRange:   { value: "800×500", unit: "mm",     label: "밀링 가공 범위 (가로×세로)" },            // LLM 추정 — 실제 설비 사양으로 바꿔 주세요
@@ -84,6 +84,12 @@ function applySite() {
     const key = el.dataset.site;
     if (!(key in SITE)) return;
     const value = SITE[key];
+    // data-hide-placeholder: 단추(전화 상담 등)는 값이 아직 없으면 숨기고, 단추 글자는 그대로 둠
+    if (el.hasAttribute("data-hide-placeholder")) {
+      el.hidden = isPlaceholder(value);
+      if (!isPlaceholder(value) && el.dataset.siteHref === "tel") el.href = "tel:" + value.replace(/[^0-9+]/g, "");
+      return;
+    }
     setText(el, value);
 
     const hrefType = el.dataset.siteHref;
@@ -146,6 +152,10 @@ function applySite() {
     const n = SITE.numbers[el.dataset.numInline];
     if (n) el.textContent = n.inline || (n.value + n.unit);
   });
+  document.querySelectorAll("[data-num-label]").forEach((el) => {
+    const n = SITE.numbers[el.dataset.numLabel];
+    if (n) el.textContent = n.label;
+  });
 
   // 지도 링크
   const q = encodeURIComponent(isPlaceholder(SITE.address) ? SITE.companyName : SITE.address);
@@ -159,6 +169,30 @@ function applySite() {
 
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
+
+  addStructuredData();
+}
+
+/* 검색 엔진용 회사 정보 (아직 모르는 값은 넣지 않음) */
+function addStructuredData() {
+  const known = (v) => v && !isPlaceholder(v);
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: SITE.companyName,
+    slogan: SITE.slogan,
+    description: SITE.tagline,
+    url: "https://jaewonjung6446.github.io/samil-site/",
+    image: "https://jaewonjung6446.github.io/samil-site/assets/og-image.png",
+  };
+  if (known(SITE.phone)) data.telephone = SITE.phone;
+  if (known(SITE.email)) data.email = SITE.email;
+  if (known(SITE.address)) data.address = SITE.address;
+  if (known(SITE.founded)) data.foundingDate = SITE.founded;
+  const tag = document.createElement("script");
+  tag.type = "application/ld+json";
+  tag.textContent = JSON.stringify(data);
+  document.head.appendChild(tag);
 }
 
 /* 2) 모바일 햄버거 메뉴 */
@@ -195,6 +229,13 @@ function setupScroll() {
     const y = window.scrollY;
     header && header.classList.toggle("scrolled", y > 10);
     toTop && toTop.classList.toggle("show", y > 600);
+    // 폰 아래 고정 단추: 첫 화면을 지나면 보이고, 견적 문의 칸에 오면 숨김
+    const bar = document.getElementById("mobileBar");
+    const contact = document.getElementById("contact");
+    if (bar) {
+      const atContact = contact && y + window.innerHeight > contact.offsetTop + 120;
+      bar.classList.toggle("show", y > 400 && !atContact);
+    }
 
     const pos = y + window.innerHeight * 0.35;
     let current = null;
@@ -204,7 +245,7 @@ function setupScroll() {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
-  const targets = document.querySelectorAll(".pillar-img, .pillar-copy, .sim, .equip-grid, .quote-form");
+  const targets = document.querySelectorAll(".pillar-img, .pillar-copy, .sim, .equip-grid, .quote-form, .work-card, .faq-list");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => {
@@ -254,6 +295,9 @@ function buildMailto(form) {
     `회사: ${v("fCompany") || "-"}`,
     `연락처: ${v("fPhone")}`,
     `이메일: ${v("fEmail")}`,
+    `수량: ${v("fQty") || "-"}`,
+    `소재: ${v("fMat") || "-"}`,
+    `필요한 날짜: ${v("fDue") || "-"}`,
     "",
     "[문의 내용]",
     v("fMsg"),

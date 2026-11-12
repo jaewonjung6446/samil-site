@@ -13,12 +13,14 @@
   <meta property="og:site_name" content="삼일정밀">
   <meta property="og:title" content="삼일정밀 | CNC 밀링·선반 정밀 부품 외주가공">
   <meta property="og:description" content="납기는 지키고, 도면대로 깎고, 값은 합리적으로 받습니다. 시제품 한 개도 도면만 보내 주세요.">
-  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:url" content="https://jaewonjung6446.github.io/samil-site/">
+  <meta property="og:image" content="https://jaewonjung6446.github.io/samil-site/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="삼일정밀 로고 — 세 번의 정밀함, 한 번의 단순함">
   <meta name="application-name" content="삼일정밀">
-  <!-- 실제 배포 후엔 og:url / og:image 를 전체 주소(https://...)로 바꿔 주세요. -->
+  <link rel="canonical" href="https://jaewonjung6446.github.io/samil-site/">
+  <!-- 자체 도메인으로 옮기면 og:url · og:image · canonical 주소를 바꿔 주세요. -->
   <!-- 2026-11-05 간결판: 회사 소개·가공 분야·품질·가공 사례·AI 공정 상세·작업 흐름·오시는 길 섹션을 걷어 냄. 예전 전체판은 _backup_pre_simple\ -->
 
   <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -40,11 +42,13 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="site-nav" id="siteNav" aria-label="주 메뉴">
+      <a href="#work">맡는 일</a>
       <a href="#delivery">납기</a>
       <a href="#precision">정밀도</a>
       <a href="#price">가격</a>
       <a href="#equipment">설비·공정</a>
-      <a href="#contact" class="nav-cta">견적 문의</a>
+      <a href="#faq">자주 묻는 질문</a>
+      <a href="#contact" class="nav-cta">견적 받기</a>
     </nav>
   </div>
 </header>
@@ -60,8 +64,26 @@
     <p class="hero-lead" data-site="tagline">납기는 지키고, 도면대로 깎고, 값은 합리적으로 받습니다.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-accent">도면 보내고 견적 받기</a>
+      <a data-site="phone" data-site-href="tel" data-hide-placeholder class="btn btn-ghost" href="#">전화 상담</a>
     </div>
+    <p class="hero-note">PDF · DWG · DXF · STEP 도면을 받습니다 · 견적은 <span data-num-inline="quoteFee">무료</span></p>
     <dl class="nums nums-hero" data-nums="quoteReply,checks,minOrder"></dl>
+  </div>
+</section>
+
+<!-- ===== 맡는 일 (2026-11-12 웹 모범 사례: 첫 화면 가까이에 무엇을 잘하는지 구체적으로) ===== -->
+<section class="section section-work" id="work">
+  <div class="container">
+    <p class="section-kicker">맡는 일</p>
+    <h2 class="section-title">이런 부품을 깎습니다</h2>
+    <p class="section-desc">도면 한 장, 부품 한 개부터 받습니다. 맞는 일인지 헷갈리면 도면부터 보내 주세요.</p>
+    <ul class="work-grid">
+      <li class="work-card"><h3>판·블록 부품</h3><p>평면, 윤곽, 포켓, 홈, 구멍, 탭 가공. 머시닝센터로 깎습니다.</p><span class="work-meta">가공 범위 <span data-num-inline="millRange">800×500mm</span></span></li>
+      <li class="work-card"><h3>축·원통 부품</h3><p>단차 축, 부싱, 나사, 홈. CNC 선반으로 깎습니다.</p><span class="work-meta">최대 지름 <span data-num-inline="latheDia">Ø250mm</span></span></li>
+      <li class="work-card"><h3>선반 + 머시닝 복합</h3><p>선반으로 깎은 뒤 키홈, 옆 구멍, 평면을 이어서 가공합니다.</p><span class="work-meta">한곳에서 마무리</span></li>
+      <li class="work-card"><h3>시제품 · 소량</h3><p>개발용 한두 개, 수리용 교체 부품, 단종 부품 다시 만들기.</p><span class="work-meta"><span data-num-inline="minOrder">1개부터</span></span></li>
+    </ul>
+    <p class="work-materials"><b>소재</b> <span data-num-label="materials">탄소강·스테인리스·알루미늄·황동·플라스틱</span></p>
   </div>
 </section>
 
@@ -132,6 +154,26 @@
   </div>
 </section>
 
+<!-- ===== 자주 묻는 질문 (2026-11-12, 답의 숫자는 main.js SITE.numbers 에서 채움) ===== -->
+<section class="section section-faq" id="faq">
+  <div class="container faq-inner">
+    <div>
+      <p class="section-kicker">자주 묻는 질문</p>
+      <h2 class="section-title">문의 전에 많이 물으시는 것</h2>
+      <p class="section-desc">여기 없는 건 전화나 견적 문의로 편하게 물어봐 주세요.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>한 개만 맡겨도 되나요?</summary><p>네. <b data-num-inline="minOrder">1개부터</b> 받습니다. 시제품이나 수리용 부품처럼 적은 수량도 괜찮습니다.</p></details>
+      <details><summary>견적 비용이 있나요?</summary><p>견적과 도면 검토는 <b data-num-inline="quoteFee">무료</b>입니다.</p></details>
+      <details><summary>견적은 언제 받을 수 있나요?</summary><p>도면을 받은 뒤 <b data-num-inline="quoteReply">1영업일 안</b>에 견적과 납기를 함께 알려 드립니다.</p></details>
+      <details><summary>납기는 얼마나 걸리나요?</summary><p>단순한 부품을 적게 맡기시면 보통 <b data-num-inline="standardLead">7영업일</b>입니다. 급한 건은 <b data-num-inline="rushLead">2영업일부터</b> 협의합니다.</p></details>
+      <details><summary>어떤 파일을 보내면 되나요?</summary><p>PDF, DWG, DXF, STEP, IGES 를 받습니다. 도면이 없으면 부품 사진이나 손으로 그린 스케치로 먼저 상담해 주세요.</p></details>
+      <details><summary>어떤 소재를 깎나요?</summary><p><span data-num-label="materials">탄소강·스테인리스·알루미늄·황동·플라스틱</span>을 주로 깎습니다. 다른 소재는 문의해 주세요.</p></details>
+      <details><summary>보낸 도면은 안전한가요?</summary><p>보내 주신 도면은 견적과 가공에만 쓰고, 밖으로 내보내지 않습니다. 이 사이트에 나온 가공 장면도 설명용 시험 부품입니다.</p></details>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 견적 문의 ===== -->
 <section class="section" id="contact">
   <div class="container contact-grid">
@@ -182,9 +224,21 @@
         <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="name@company.com">
         <p class="err" data-for="fEmail"></p>
       </div>
+      <div class="form-row third">
+        <label for="fQty">수량</label>
+        <input id="fQty" name="quantity" type="text" inputmode="numeric" placeholder="예: 5개">
+      </div>
+      <div class="form-row third">
+        <label for="fMat">소재</label>
+        <input id="fMat" name="material" type="text" placeholder="예: SUS304">
+      </div>
+      <div class="form-row third">
+        <label for="fDue">필요한 날짜</label>
+        <input id="fDue" name="due" type="date">
+      </div>
       <div class="form-row">
         <label for="fMsg">문의 내용 <em>*</em></label>
-        <textarea id="fMsg" name="message" rows="4" required placeholder="부품명, 소재, 수량, 희망 납기를 적어 주세요."></textarea>
+        <textarea id="fMsg" name="message" rows="4" required placeholder="부품 이름, 후처리(도금·열처리 등), 그 밖에 알려 주실 것을 적어 주세요."></textarea>
         <p class="err" data-for="fMsg"></p>
       </div>
       <div class="form-row">
@@ -194,7 +248,9 @@
           <label for="fFile" class="btn btn-outline btn-sm">파일 선택</label>
           <span class="file-names" id="fileNames">선택된 파일 없음</span>
         </div>
+        <p class="hint">PDF · DWG · DXF · STEP · IGES. 도면이 없으면 사진이나 스케치도 괜찮습니다.</p>
         <p class="hint">※ 보내기를 누르면 메일 앱이 열립니다. 도면은 그 메일에 직접 첨부해 주세요.</p>
+        <p class="hint hint-safe">보내 주신 도면은 견적과 가공에만 쓰고 밖으로 내보내지 않습니다.</p>
       </div>
       <div class="form-row agree">
         <label class="check">
@@ -207,7 +263,7 @@
         </details>
         <p class="err" data-for="fAgree"></p>
       </div>
-      <button type="submit" class="btn btn-accent btn-block">견적 문의 보내기</button>
+      <button type="submit" class="btn btn-accent btn-block">도면 보내고 견적 받기</button>
       <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -234,6 +290,12 @@
     <p class="copy">© <span id="year">2026</span> <span data-site="companyName">삼일정밀</span>.</p>
   </div>
 </footer>
+
+<!-- 폰 화면 아래 고정 단추 (2026-11-12: 전화·견적을 어느 위치에서나 한 번에) -->
+<div class="mobile-bar" id="mobileBar">
+  <a data-site="phone" data-site-href="tel" data-hide-placeholder class="mb-call" href="#">전화</a>
+  <a href="#contact" class="mb-quote">도면 보내고 견적 받기</a>
+</div>
 
 <a href="#hero" class="to-top" id="toTop" aria-label="맨 위로">↑</a>
 
